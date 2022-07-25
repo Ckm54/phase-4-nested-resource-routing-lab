@@ -20,7 +20,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   def create
     user = User.find(params[:user_id])
     new_item = user.items.create(item_params)
-    render json: new_item, include: :user, status: :created
+    render json: new_item, status: :created
   end
 
 
